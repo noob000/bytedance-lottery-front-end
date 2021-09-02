@@ -1,0 +1,164 @@
+.lotteryContainer {
+  width: 496px;
+  height: 386px;
+  background-color: #fadd95;
+  border-radius: 10px;
+}
+
+.lotteryContainer .mainContainer {
+  width: 492px;
+  height: 338px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 1px 0 1px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.lotteryContainer .mainContainer .turnContainer {
+  background-color: #e37815;
+  border-radius: 10px;
+  width: 448px;
+  padding: 20px 25px 5px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+.lotteryContainer .mainContainer .turnContainer .startButton {
+  width: 120px;
+  height: 90px;
+  background-color: #ffe6a6;
+  -webkit-box-shadow: inset 0 0 16px #ffa800;
+          box-shadow: inset 0 0 16px #ffa800;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.lotteryContainer .mainContainer .turnContainer .startButton p {
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 600;
+  color: #a74b00;
+  margin: 0;
+}
+
+.lotteryContainer .mainContainer .turnContainer .prizeItem {
+  width: 120px;
+  height: 82px;
+  background-color: #fdf3f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 5px;
+  padding: 5px 0 5px 0;
+}
+
+.lotteryContainer .mainContainer .turnContainer .prizeItem .prizePic {
+  width: 40px;
+  height: 40px;
+}
+
+.lotteryContainer .dotSideContainer {
+  width: 24px;
+  height: 338px;
+  line-height: 24px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lotteryContainer .dotContainer {
+  width: 480px;
+  height: 24px;
+  line-height: 24px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lotteryContainer .dotOrange {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e37815;
+}
+
+.lotteryContainer .dotWhite {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.lotteryContainer .dotTransparent {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #fadd95;
+  border: 0.5px solid white;
+}
+
+.darkItem {
+  opacity: 0.7;
+}
+/*# sourceMappingURL=lottery.css.map */

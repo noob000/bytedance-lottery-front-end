@@ -1,0 +1,118 @@
+@import "basic";
+
+.lotteryContainer {
+    width: 496px;
+    height: 386px;
+    background-color: $title-color;
+    border-radius: 10px;
+
+
+    .mainContainer {
+        width: 492px;
+        height: 338px;
+        display: flex;
+        padding: 0 1px 0 1px;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .turnContainer {
+            background-color: $padding-color;
+            border-radius: 10px;
+            width: 448px;
+            padding: 20px 25px 5px 25px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: stretch;
+
+            .startButton {
+                width: 120px;
+                height: 90px;
+                background-color: #ffe6a6;
+                box-shadow: inset 0 0 16px #ffa800;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-around;
+                border-radius: 5px;
+
+                p {
+                    font-size: 32px;
+                    line-height: 42px;
+                    font-weight: 600;
+                    color: #a74b00;
+                    margin: 0;
+                }
+
+                cursor:pointer;
+            }
+
+            .prizeItem {
+                width: 120px;
+                height: 82px;
+                background-color: $prize-background-color;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-around;
+                border-radius: 5px;
+                padding: 5px 0 5px 0;
+
+                .prizePic {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+
+    }
+
+    .dotSideContainer {
+        width: 24px;
+        height: 338px;
+        line-height: 24px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .dotContainer {
+        width: 480px;
+        height: 24px;
+        line-height: 24px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dotOrange {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $padding-color;
+    }
+
+    .dotWhite {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: white;
+    }
+
+    .dotTransparent {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: $title-color;
+        border: 0.5px solid white;
+    }
+}
+
+.darkItem {
+    opacity: 0.7;
+}
