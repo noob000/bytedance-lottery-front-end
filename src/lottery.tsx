@@ -29,7 +29,7 @@ export default function Lottery(props: any) {
     }, [])
 
     const lottery = () => {
-        setPrize(null)
+        setTurnNum(null)
         axios({
             method: "get",
             url: 'https://qco156.fn.thelarkcloud.com/lottery'
@@ -43,13 +43,13 @@ export default function Lottery(props: any) {
     }
 
     useEffect(() => {
-        console.log(1)
+
         if (prize != null && !lotteryState) setLotteryState(true)
     }, [prize])
 
     useEffect(() => {
         if (turnNum !== null) {
-            console.log(1)
+
             if (turnNum == 7) time1.current = setTimeout(() => {
                 setTurnNum(0)
 
@@ -60,13 +60,14 @@ export default function Lottery(props: any) {
     }, [turnNum])
 
     useEffect(() => {
-        console.log(1)
+
         if (lotteryState) turn();
     }, [lotteryState])
 
     const turn = () => {
-        setTurnNum(0);
+
         let promise = new Promise(function (resolve, reject) {
+            setTurnNum(0);
             setTimeout(function () {
                 clearTimeout(time1.current);
                 resolve(1)
@@ -90,7 +91,7 @@ export default function Lottery(props: any) {
                 setModalVisible(true);
             }, getTime(index))
         }
-        if (index == 7) {
+        else if (index == 7) {
             setTurnNum(6);
             setTimeout(() => {
                 clearTimeout(time1.current);
@@ -209,9 +210,6 @@ export default function Lottery(props: any) {
             return result;
         }
     }
-
-
-
 
     return (
         <div className='lotteryContainer'>
