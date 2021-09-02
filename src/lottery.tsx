@@ -9,8 +9,8 @@ export default function Lottery(props: any) {
     const giftListEL: any = useRef(null);
     let time1: any = useRef(null);
     const [giftList, setGiftList] = useState<any>([]);
-    const [prize, setPrize] = useState<string|null>(null);
-    const [turnNum, setTurnNum] = useState<number|null>(null);
+    const [prize, setPrize] = useState<string | null>(null);
+    const [turnNum, setTurnNum] = useState<number | null>(null);
     const [lotteryState, setLotteryState] = useState<boolean>(false);
     const [map, setMap] = useState<any>(null);
     const [modalVisible, setModalVisible] = useState<boolean>(false)
@@ -29,42 +29,46 @@ export default function Lottery(props: any) {
     }, [])
 
     const lottery = () => {
-        const mes = props.func();
-        if (mes == 'success')
-            axios({
-                method: "get",
-                url: 'https://qco156.fn.thelarkcloud.com/lottery'
-            }).then((res) => {
+        setPrize(null)
+        axios({
+            method: "get",
+            url: 'https://qco156.fn.thelarkcloud.com/lottery'
+        }).then((res) => {
+            const mes = props.func();
+            if (mes == 'success') {
                 setPrize(res.data);
-            })
-        else if (mes == 'failed') message.warn('抱歉您的矿石不足')
+            }
+            else message.warn('抱歉您的矿石不足')
+        })
     }
 
     useEffect(() => {
-        if (prize && !lotteryState) {
-            turn();
-            setLotteryState(true)
-        }
+        console.log(1)
+        if (prize != null && !lotteryState) setLotteryState(true)
     }, [prize])
 
     useEffect(() => {
         if (turnNum !== null) {
+            console.log(1)
             if (turnNum == 7) time1.current = setTimeout(() => {
                 setTurnNum(0)
 
             }, 100);
-            else time1.current = setTimeout(() => setTurnNum((prev: any) => {
-                return ++prev;
-            }), 100);
+            else time1.current = setTimeout(() => setTurnNum((prev: any) => ++prev
+            ), 100);
         }
     }, [turnNum])
+
+    useEffect(() => {
+        console.log(1)
+        if (lotteryState) turn();
+    }, [lotteryState])
 
     const turn = () => {
         setTurnNum(0);
         let promise = new Promise(function (resolve, reject) {
             setTimeout(function () {
                 clearTimeout(time1.current);
-                time1.current = 0;
                 resolve(1)
             }, 4000)
 
@@ -77,13 +81,13 @@ export default function Lottery(props: any) {
     }
 
     function secondTurn(giftname: any) {
+        setLotteryState(false)
         const index = map.get(giftname);
         if (index == 6) {
             setTurnNum(6);
             setTimeout(() => {
                 clearTimeout(time1.current);
                 setModalVisible(true);
-                setLotteryState(false)
             }, getTime(index))
         }
         if (index == 7) {
@@ -91,13 +95,11 @@ export default function Lottery(props: any) {
             setTimeout(() => {
                 clearTimeout(time1.current);
                 setModalVisible(true);
-                setLotteryState(false);
             }, getTime(index))
         }
     }
 
     const getTime = (index: any) => {
-        console.log(index)
         const pos = map.get(prize)
         if (index == 7) {
             switch (pos) {
@@ -255,7 +257,7 @@ export default function Lottery(props: any) {
                     props.handleChange(prize);
                 }}
             >
-                <img src={prize !== null ? giftList[map.get(prize)].url : null} style={{width:'80px',height:'80px'}}/>
+                <img src={prize !== null ? giftList[map.get(prize)].url : null} style={{ width: '80px', height: '80px' }} />
                 <p>恭喜您获得奖品:{prize}</p>
             </Modal>
         </div>
